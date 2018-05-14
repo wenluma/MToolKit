@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA7DE20A3178E0030F1D0 /* CrashParser.swift */; };
 		526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD574209B11BA00296E65 /* AppDelegate.swift */; };
 		526AD577209B11BD00296E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526AD576209B11BD00296E65 /* Assets.xcassets */; };
 		526AD57A209B11BD00296E65 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526AD578209B11BD00296E65 /* MainMenu.xib */; };
 		526AD586209B11BD00296E65 /* MToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD585209B11BD00296E65 /* MToolKitTests.swift */; };
 		526AD591209B11BD00296E65 /* MToolKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD590209B11BD00296E65 /* MToolKitUITests.swift */; };
+		F1CEDB6A8BE50ADE8AD01B14 /* Pods_MToolKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520EA7DE20A3178E0030F1D0 /* CrashParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashParser.swift; sourceTree = "<group>"; };
 		526AD571209B11BA00296E65 /* MToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526AD574209B11BA00296E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		526AD576209B11BD00296E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		526AD58C209B11BD00296E65 /* MToolKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MToolKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		526AD590209B11BD00296E65 /* MToolKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MToolKitUITests.swift; sourceTree = "<group>"; };
 		526AD592209B11BD00296E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F965FCA23AC19753BE4229 /* Pods-MToolKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.release.xcconfig"; sourceTree = "<group>"; };
+		B011BB185064744CB5BB051D /* Pods-MToolKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.debug.xcconfig"; sourceTree = "<group>"; };
+		FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MToolKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CEDB6A8BE50ADE8AD01B14 /* Pods_MToolKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 				526AD584209B11BD00296E65 /* MToolKitTests */,
 				526AD58F209B11BD00296E65 /* MToolKitUITests */,
 				526AD572209B11BA00296E65 /* Products */,
+				8C7BA5D2E0FE4F2C3AF5CF85 /* Pods */,
+				C3620EBB4FFF641F0A7CF152 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				526AD574209B11BA00296E65 /* AppDelegate.swift */,
+				520EA7DE20A3178E0030F1D0 /* CrashParser.swift */,
 				526AD576209B11BD00296E65 /* Assets.xcassets */,
 				526AD578209B11BD00296E65 /* MainMenu.xib */,
 				526AD57B209B11BD00296E65 /* Info.plist */,
@@ -121,6 +131,23 @@
 			path = MToolKitUITests;
 			sourceTree = "<group>";
 		};
+		8C7BA5D2E0FE4F2C3AF5CF85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B011BB185064744CB5BB051D /* Pods-MToolKit.debug.xcconfig */,
+				72F965FCA23AC19753BE4229 /* Pods-MToolKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3620EBB4FFF641F0A7CF152 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 526AD595209B11BD00296E65 /* Build configuration list for PBXNativeTarget "MToolKit" */;
 			buildPhases = (
+				9217EEF016EED0DE5F9EFD76 /* [CP] Check Pods Manifest.lock */,
 				526AD56D209B11BA00296E65 /* Sources */,
 				526AD56E209B11BA00296E65 /* Frameworks */,
 				526AD56F209B11BA00296E65 /* Resources */,
+				549C1CD44474B4BC952E1ED5 /* [CP] Embed Pods Frameworks */,
+				2A96CAD12DB8F93E44D71FA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,11 +276,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A96CAD12DB8F93E44D71FA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		549C1CD44474B4BC952E1ED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9217EEF016EED0DE5F9EFD76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MToolKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		526AD56D209B11BA00296E65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */,
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +502,7 @@
 		};
 		526AD596209B11BD00296E65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B011BB185064744CB5BB051D /* Pods-MToolKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MToolKit/MToolKit.entitlements;
@@ -424,6 +514,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -432,6 +523,7 @@
 		};
 		526AD597209B11BD00296E65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72F965FCA23AC19753BE4229 /* Pods-MToolKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MToolKit/MToolKit.entitlements;
@@ -443,6 +535,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
