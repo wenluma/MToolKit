@@ -11,10 +11,10 @@ import SnapKit
 import SwiftyBeaver
 
 class CrashParserViewController: NSViewController {
-	
+//	MARK: - property
 	var crashLab, dsymLab : NSTextField?
 	var crashPathField, dsymPathField : NSTextField?
-	
+//	MARK: - override
 	override func loadView() {
 		view = NSView()
 		self.view.wantsLayer = false //true ,可以改变 layer 背景色
@@ -29,9 +29,8 @@ class CrashParserViewController: NSViewController {
 		self.view.addSubview(dsymLab!)
 		self.view.addSubview(crashPathField!)
 		self.view.addSubview(dsymPathField!)
-		
 	}
-	
+		
 	override public func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -46,39 +45,40 @@ class CrashParserViewController: NSViewController {
 	
 	override func viewDidLayout() {
 		super.viewDidLayout()
-		
 	}
 	
 	override func updateViewConstraints() {
 		super.updateViewConstraints()
 		SwiftyBeaver.debug("#updateViewConstraints")
+		
 		crashLab!.snp.makeConstraints { (make) -> Void in
-			make.left.top.equalTo(20);
+			make.left.top.equalTo(LayoutConst.edgePadding);
 			make.width.lessThanOrEqualTo(100)
 		}
+		crashPathField?.snp.makeConstraints({ (make) in
+			make.left.equalTo(crashLab!.snp.right).offset(LayoutConst.spacePadding)
+			make.top.equalTo(crashLab!)
+			make.right.equalTo(self.view).offset(-LayoutConst.edgePadding)
+		})
+		
 		dsymLab!.snp.makeConstraints { (make) in
 			make.left.equalTo(crashLab!.snp.left)
-			make.top.equalTo(crashLab!.snp.bottom).offset(10)
+			make.top.equalTo(crashLab!.snp.bottom).offset(LayoutConst.spacePadding)
 			make.width.equalTo(crashLab!.snp.width)
 		}
-		crashPathField?.snp.makeConstraints({ (make) in
-			make.left.equalTo(crashLab!.snp.right).offset(10).priority(750)
-			make.top.equalTo(crashLab!)
-			make.right.equalTo(self.view).offset(-10)
-		})
 		dsymPathField?.snp.makeConstraints({ (make) in
-			make.left.equalTo(crashLab!.snp.right).offset(10)
+			make.left.equalTo(crashLab!.snp.right).offset(LayoutConst.spacePadding)
 			make.top.equalTo(dsymLab!)
-			make.right.equalTo(self.view).offset(-10)
+			make.right.equalTo(crashPathField!)
 		})
 	}
 	
+//	MARK: - create textField
 	func textField( _ title : String, _ placeholderString : String, enableEdit :Bool = false, alignment: NSTextAlignment = .left) -> NSTextField {
 		let textField = NSTextField()
 		textField.isBezeled = false
 		textField.drawsBackground = true
 		textField.isEditable = enableEdit
-		textField.isSelectable = false
 		textField.stringValue = title
 		textField.alignment = alignment
 		textField.placeholderString = placeholderString
