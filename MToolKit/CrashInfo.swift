@@ -31,6 +31,12 @@ class CrashInfo {
 	}
 	
 	func parserCrashFile() {
+		let content = try? String(contentsOfFile: path!)
+//		CharacterSet.newlines
+		let lines = content?.split(separator: "\n")
+		for line in lines! {
+			line.hasPrefix("Incident Identifier:")
+		}
 	}
 	
 	func arch() -> String? {
