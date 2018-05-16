@@ -14,6 +14,7 @@ class CrashParserViewController: NSViewController {
 //	MARK: - property
 	var crashLab, dsymLab : NSTextField?
 	var crashPathField, dsymPathField : NSTextField?
+	var parserCrashTextView : NSTextView?
 //	MARK: - override
 	override func loadView() {
 		view = NSView()
@@ -24,11 +25,13 @@ class CrashParserViewController: NSViewController {
 		dsymLab = textField("dsym path:", "", alignment: .right)
 		crashPathField = textField("", "请输入crash log path", enableEdit: true)
 		dsymPathField = textField("", "请输入dsym path", enableEdit: true)
-
+		parserCrashTextView = textView("等待解析数据")
+		
 		self.view.addSubview(crashLab!)
 		self.view.addSubview(dsymLab!)
 		self.view.addSubview(crashPathField!)
 		self.view.addSubview(dsymPathField!)
+		view.addSubview(parserCrashTextView!)
 	}
 		
 	override public func viewDidLoad() {
@@ -71,6 +74,12 @@ class CrashParserViewController: NSViewController {
 			make.top.equalTo(dsymLab!)
 			make.right.equalTo(crashPathField!)
 		})
+		
+		parserCrashTextView?.snp.makeConstraints({ (make) in
+			make.top.equalTo(dsymLab!.snp.bottom).offset(LayoutConst.spacePadding)
+			make.right.bottom.equalTo(-LayoutConst.edgePadding)
+			make.left.equalTo(LayoutConst.edgePadding)
+		})
 	}
 	
 //	MARK: - create textField
@@ -84,4 +93,10 @@ class CrashParserViewController: NSViewController {
 		textField.placeholderString = placeholderString
 		return textField
 	}
+	
+	func textView(_ text: String) -> NSTextView {
+		let textView = NSTextView()
+		textView.string = text
+		return textView
+	} 
 }

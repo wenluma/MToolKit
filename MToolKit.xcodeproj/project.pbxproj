@@ -14,6 +14,8 @@
 		526AD586209B11BD00296E65 /* MToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD585209B11BD00296E65 /* MToolKitTests.swift */; };
 		526AD591209B11BD00296E65 /* MToolKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD590209B11BD00296E65 /* MToolKitUITests.swift */; };
 		529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529453C420AA76E4007DF27F /* LayoutConst.swift */; };
+		52C271ED20ABC51500937393 /* tmp.crash in Resources */ = {isa = PBXBuildFile; fileRef = 52C271EC20ABC51500937393 /* tmp.crash */; };
+		52C271EF20ABC58B00937393 /* CrashInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C271EE20ABC58B00937393 /* CrashInfo.swift */; };
 		F1CEDB6A8BE50ADE8AD01B14 /* Pods_MToolKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		526AD590209B11BD00296E65 /* MToolKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MToolKitUITests.swift; sourceTree = "<group>"; };
 		526AD592209B11BD00296E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529453C420AA76E4007DF27F /* LayoutConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConst.swift; sourceTree = "<group>"; };
+		52C271EC20ABC51500937393 /* tmp.crash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tmp.crash; sourceTree = "<group>"; };
+		52C271EE20ABC58B00937393 /* CrashInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashInfo.swift; sourceTree = "<group>"; };
 		72F965FCA23AC19753BE4229 /* Pods-MToolKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.release.xcconfig"; sourceTree = "<group>"; };
 		B011BB185064744CB5BB051D /* Pods-MToolKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MToolKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,8 @@
 				526AD574209B11BA00296E65 /* AppDelegate.swift */,
 				520EA7DE20A3178E0030F1D0 /* CrashParser.swift */,
 				529453C420AA76E4007DF27F /* LayoutConst.swift */,
+				52C271EE20ABC58B00937393 /* CrashInfo.swift */,
+				52C271EC20ABC51500937393 /* tmp.crash */,
 				526AD576209B11BD00296E65 /* Assets.xcassets */,
 				526AD578209B11BD00296E65 /* MainMenu.xib */,
 				526AD57B209B11BD00296E65 /* Info.plist */,
@@ -260,6 +266,7 @@
 			files = (
 				526AD577209B11BD00296E65 /* Assets.xcassets in Resources */,
 				526AD57A209B11BD00296E65 /* MainMenu.xib in Resources */,
+				52C271ED20ABC51500937393 /* tmp.crash in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +352,7 @@
 				520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */,
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 				529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */,
+				52C271EF20ABC58B00937393 /* CrashInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
