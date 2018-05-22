@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520E405420B3B57200B34908 /* StringRegularExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E405320B3B57200B34908 /* StringRegularExtension.swift */; };
 		520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA7DE20A3178E0030F1D0 /* CrashParser.swift */; };
 		526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD574209B11BA00296E65 /* AppDelegate.swift */; };
 		526AD577209B11BD00296E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526AD576209B11BD00296E65 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520E405320B3B57200B34908 /* StringRegularExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegularExtension.swift; sourceTree = "<group>"; };
 		520EA7DE20A3178E0030F1D0 /* CrashParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashParser.swift; sourceTree = "<group>"; };
 		526AD571209B11BA00296E65 /* MToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526AD574209B11BA00296E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				520EA7DE20A3178E0030F1D0 /* CrashParser.swift */,
 				529453C420AA76E4007DF27F /* LayoutConst.swift */,
 				52C271EE20ABC58B00937393 /* CrashInfo.swift */,
+				520E405320B3B57200B34908 /* StringRegularExtension.swift */,
 				52C271EC20ABC51500937393 /* tmp.crash */,
 				526AD576209B11BD00296E65 /* Assets.xcassets */,
 				526AD578209B11BD00296E65 /* MainMenu.xib */,
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */,
+				520E405420B3B57200B34908 /* StringRegularExtension.swift in Sources */,
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 				529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */,
 				52C271EF20ABC58B00937393 /* CrashInfo.swift in Sources */,
@@ -524,7 +528,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,7 +549,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,7 +569,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -576,7 +590,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -592,7 +610,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -608,7 +630,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = S2H76B2R6R;
 				INFOPLIST_FILE = MToolKitUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.ibiubiu.MToolKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
