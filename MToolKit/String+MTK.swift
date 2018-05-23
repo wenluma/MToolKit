@@ -27,6 +27,10 @@ extension String {
 	func mtk_trimmingWhiteSpaces() -> String {
 		return self.trimmingCharacters(in: .whitespaces)
 	}
+	
+	func mtk_startWithDigtail() -> Bool {
+		return self.prefix(while: { "0"..."9" ~= $0 }).count > 0
+	}
 }
 
 func mainBundlePath(forResource: String?, ofType: String?) -> String? {
