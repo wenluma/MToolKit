@@ -22,6 +22,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		createNewWindow()
 		controller = NSWindowController(window: window)
 		controller?.showWindow(window)
+		
+		let path = mainBundlePath(forResource: "tmp", ofType: "crash")
+		guard path != nil else {
+			return
+		}
+		let crashInfo = CrashInfo(crashFilePath: path!)
+		
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
