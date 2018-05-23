@@ -23,4 +23,8 @@ extension String {
 			return []
 		}
 	}
+	
+	func mtk_trimmingWhiteSpaces() -> String {
+		return self.trimmingCharacters(in: .whitespaces)
+	}
 }
