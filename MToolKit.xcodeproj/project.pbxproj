@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520E405420B3B57200B34908 /* StringRegularExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E405320B3B57200B34908 /* StringRegularExtension.swift */; };
+		520E405420B3B57200B34908 /* String+MTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E405320B3B57200B34908 /* String+MTK.swift */; };
 		520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA7DE20A3178E0030F1D0 /* CrashParser.swift */; };
 		526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD574209B11BA00296E65 /* AppDelegate.swift */; };
 		526AD577209B11BD00296E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526AD576209B11BD00296E65 /* Assets.xcassets */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		520E405320B3B57200B34908 /* StringRegularExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRegularExtension.swift; sourceTree = "<group>"; };
+		520E405320B3B57200B34908 /* String+MTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MTK.swift"; sourceTree = "<group>"; };
 		520EA7DE20A3178E0030F1D0 /* CrashParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashParser.swift; sourceTree = "<group>"; };
 		526AD571209B11BA00296E65 /* MToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526AD574209B11BA00296E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				520EA7DE20A3178E0030F1D0 /* CrashParser.swift */,
 				529453C420AA76E4007DF27F /* LayoutConst.swift */,
 				52C271EE20ABC58B00937393 /* CrashInfo.swift */,
-				520E405320B3B57200B34908 /* StringRegularExtension.swift */,
+				520E405320B3B57200B34908 /* String+MTK.swift */,
 				52C271EC20ABC51500937393 /* tmp.crash */,
 				526AD576209B11BD00296E65 /* Assets.xcassets */,
 				526AD578209B11BD00296E65 /* MainMenu.xib */,
@@ -355,7 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */,
-				520E405420B3B57200B34908 /* StringRegularExtension.swift in Sources */,
+				520E405420B3B57200B34908 /* String+MTK.swift in Sources */,
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 				529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */,
 				52C271EF20ABC58B00937393 /* CrashInfo.swift in Sources */,

@@ -28,3 +28,7 @@ extension String {
 		return self.trimmingCharacters(in: .whitespaces)
 	}
 }
+
+func mainBundlePath(forResource: String?, ofType: String?) -> String? {
+	return Bundle.main.path(forResource: forResource, ofType: ofType)
+}
