@@ -28,7 +28,7 @@ class CrashInfo {
 	var exceptionType : String = "Exception Type:" //
 	var exceptionSubtype : String = "Exception Subtype:" // 异常子类型
 	var crashThread : String = "Triggered by Thread:" //  Triggered by Thread，异常崩溃线程
-	
+	var crashContent : String?
 	lazy var prefixs = [incidentIdentifier, 
 				   crashReporterKey,
 				   hardwareModel,
@@ -47,7 +47,7 @@ class CrashInfo {
 	
 	var infos = [String:String]()
 	
-	var primitiveCrashCodes : [String]? // 初始的崩溃代码
+	var primitiveCrashCodes : [String.SubSequence]? // 初始的崩溃代码
 	var handlerCrashCodes : [String]? // 解析后的代码
 	
 	convenience init() {
@@ -90,12 +90,25 @@ class CrashInfo {
 			}
 		}
 		
-		let crashThreadValue = "Thread " + infos[crashThread]!.mtk_trimmingWhiteSpaces() + "([\\s\\S]*)\n\n"
-		primitiveCrashCodes = content?.mtk_matchRegular(crashThreadValue)
-		if primitiveCrashCodes != nil {
-			for info in primitiveCrashCodes! {
-				SwiftyBeaver.debug(info)
+		let crashThreadValue = "Thread " + infos[crashThread]!.mtk_trimmingWhiteSpaces() + "[\\s\\S]*?\n\n"
+		let crashContent = content?.mtk_matchRegular(crashThreadValue)
+		
+		self.crashContent = crashContent?.joined(separator: "\n###\n")
+		print(self.crashContent)
+		
+		if crashContent != nil {
+			for info in crashContent! {
+				primitiveCrashCodes = info.split(separator: "\n")
+
+				for crashLine in primitiveCrashCodes! {
+//					SwiftyBeaver.debug(crashLine)
+					if String(crashLine).mtk_startWithDigtail() {
+						SwiftyBeaver.debug(crashLine)
+					}
+				}
 			}
 		}
 	}
+	
+	
 }
