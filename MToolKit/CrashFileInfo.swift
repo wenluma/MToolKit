@@ -119,7 +119,7 @@ class CrashFileInfo {
 				for crashLine in primitiveCrashCodes! {
 					let crashItem = String(crashLine)
 					if crashItem.mtk_startWithDigtail() {
-						let result = ParserCrashLineItem.parser(crashLineString: crashItem, arch: .arm64, dsymPath: dsymPath)
+						let result = ParserCrashLineItem.parser(crashLineString: crashItem, arch: dsymItem!.arch, dsymPath: dsymPath)
 						handlerCrashCodes.append(result)
 					} else {
 						handlerCrashCodes.append(crashItem)
