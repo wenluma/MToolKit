@@ -24,6 +24,46 @@ extension String {
 		}
 	}
 	
+	func mtk_offset(_ offsetIndex: Int) -> String.Index {
+		if self.count > offsetIndex {
+			return self.index(self.startIndex, offsetBy: offsetIndex, limitedBy: self.endIndex)!
+		}
+		return self.startIndex
+	}
+	
+	func mtk_subString(_ fromOffset : Int, _ endOffset : Int) -> String {
+		if endOffset >= fromOffset && 
+			fromOffset >= 0 &&
+			endOffset < self.count {
+			return String(self[self.mtk_offset(fromOffset)...self.mtk_offset(endOffset)])
+		} else if (endOffset < 0 && endOffset > -self.count) && 
+			(fromOffset > 0 && fromOffset < self.count) &&
+		fromOffset + endOffset >= 0 {
+			return String(self[mtk_offset(fromOffset)...mtk_offset(endOffset + self.count - 1)])
+		}
+		return ""
+	}
+	
+	func mtk_subString(_ fromOffset : Int) -> String {
+		return String(self[mtk_offset(fromOffset) ..< self.endIndex])
+	}
+	
+	func mtk_subStringEndOffset(_ endOffset : Int) -> String {
+		return String(self[self.startIndex ..< mtk_offset(endOffset)])
+	}
+	
+	func mtk_subString(_ after : Character, _ before : Character) -> String {
+		guard self.contains(after) && self.contains(before) else {
+			return ""
+		}
+		let start = self.index(after: self.index(of: after)!)
+		let end = self.index(before: self.index(of: before)!)
+		if start <= end {
+			return String(self[start...end])
+		}
+		return ""
+	}
+	
 	func mtk_trimmingWhiteSpaces() -> String {
 		return self.trimmingCharacters(in: .whitespaces)
 	}
