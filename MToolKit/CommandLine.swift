@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import SwiftyBeaver
 
 class CommandLine {
 	class func runCommand(_ command: String) -> String {
+		SwiftyBeaver.debug(command)
+		
 		let task = Process()
 		task.launchPath = "/bin/sh"
 		task.arguments = ["-c", String(command)]
