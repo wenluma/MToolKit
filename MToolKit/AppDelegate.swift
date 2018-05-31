@@ -23,12 +23,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		controller = NSWindowController(window: window)
 		controller?.showWindow(window)
 		
-		let path = mainBundlePath(forResource: "tmp", ofType: "crash")
+		let path = mainBundlePath(forResource: "20180529", ofType: "crash")
 		guard path != nil else {
 			return
 		}
-		let crashInfo = CrashInfo(crashFilePath: path!)
+		let crashInfo = CrashFileInfo(crashFilePath: path!, dsymPath: "/Users/gaoliang5/Downloads/com/SinaNews.app.dSYM/Contents/Resources/DWARF/SinaNews")
 		
+//		let str = "7   SinaNews                      0x0000000101346d98 0x10006c000 + 19770776"
+//		let commandOutput = ParserCrash.parser(crashLineString: str, arch: .arm64, archivePath: "/Users/gaoliang5/Downloads/com/SinaNews.app.dSYM/Contents/Resources/DWARF/SinaNews")
+//		let commandOutput = ParserCrash.runCommand(command: "ls /Users/gaoliang5/Downloads/com/SinaNews.app.dSYM")
+//		print(commandOutput)
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -80,7 +84,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //		window.contentViewController = CrashParserViewController()
 //		window.contentViewController?.view = NSView()
 		
-		var	viewController = CrashParserViewController()
+		let	viewController = CrashParserViewController()
 		viewController.loadView()
 //		viewController.view = NSView() // added this line; edit to set any view of your choice
 		window.contentView!.addSubview(viewController.view)
