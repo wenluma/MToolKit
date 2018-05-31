@@ -11,6 +11,7 @@ import SwiftyBeaver
 
 ///  swift string 处理
 /// https://stackoverflow.com/questions/39676939/how-does-string-index-work-in-swift
+// MARK: crash file 
 class CrashFileInfo {
 	var path : String?
 	var incidentIdentifier : String = "Incident Identifier:" // 触发id
@@ -103,13 +104,12 @@ class CrashFileInfo {
 		let binaryImagesContent = content?.mtk_matchRegular(binaryImages)
 		if binaryImagesContent!.count > 0 {
 			dsymItem = CrashDsymItem(binaryImagesContent![0])
-			self.dsymPath = dsymItem!.dsymUDIDPath()
-			crashCode2SourceCode()
+			self.dsymPath = dsymItem!.dsymUUIDPath()
+			let _  = crashCode2SymbolicCode() //消除警告
 		}
 	}
-
-	
-	func crashCode2SourceCode() -> String {
+// 符号化解析
+	func crashCode2SymbolicCode() -> String {
 		if self.crashContent != nil {
 			handlerCrashCodes.removeAll()
 			
@@ -204,7 +204,7 @@ class ParserCrashLineItem {
 	}
 }
 
-//MARK: - crash dsym
+//MARK: - get crash dsym
 class CrashDsymItem {
 	private var dsymID = ""
 	var arch : Arch 
@@ -212,17 +212,17 @@ class CrashDsymItem {
 		set {
 //			8-4-4-4-12.
 			let upper = newValue.uppercased()
-			var dsymUDID = ""
+			var dsymUUID = ""
 			var index = 0
 			
 			for c in upper {
 				index += 1
-				dsymUDID.append(c)
+				dsymUUID.append(c)
 				if index == 8 || index == 12 || index == 16 || index == 20 {
-					dsymUDID.append("-")
+					dsymUUID.append("-")
 				}
 			}
-			_uuid = dsymUDID
+			_uuid = dsymUUID
 		}
 		get {
 			return _uuid
@@ -243,16 +243,16 @@ class CrashDsymItem {
 		}
 	}	
 	
-	private func findDsymUDIDPath() -> String {
+	private func findDsymUUIDPath() -> String {
 		guard _uuid.count > 0 else {
 			return "find dsym fail"
 		}
-		let findDsymUDIDCommand = "mdfind \"com_apple_xcode_dsym_uuids == \(self.uuid)\""
-		return CommandLine.runCommand(findDsymUDIDCommand)
+		let findDsymUUIDCommand = "mdfind \"com_apple_xcode_dsym_uuids == \(self.uuid)\""
+		return CommandLine.runCommand(findDsymUUIDCommand)
 	}
 	
-	func dsymUDIDPath() -> String {
-		let path = findDsymUDIDPath().trimmingCharacters(in: CharacterSet.newlines)
+	func dsymUUIDPath() -> String {
+		let path = findDsymUUIDPath().trimmingCharacters(in: CharacterSet.newlines)
 		guard path.count > 0  else {
 			return ""
 		}
