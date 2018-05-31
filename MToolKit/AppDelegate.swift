@@ -15,24 +15,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 //	@IBOutlet weak var window: NSWindow!
 	var window : NSWindow! = NSWindow(contentRect: NSMakeRect(0, 0, NSScreen.main!.frame.midX, NSScreen.main!.frame.midY), styleMask: [.borderless], backing: .buffered, defer: false)
-	var controller :  NSWindowController?
+	var windowController :  NSWindowController?
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		setupLog()
 		createNewWindow()
-		controller = NSWindowController(window: window)
-		controller?.showWindow(window)
+		windowController = NSWindowController(window: window)
+		windowController?.showWindow(window)
 		
 		let path = mainBundlePath(forResource: "20180529", ofType: "crash")
 		guard path != nil else {
 			return
 		}
-		let crashInfo = CrashFileInfo(crashFilePath: path!, dsymPath: "/Users/gaoliang5/Downloads/com/SinaNews.app.dSYM/Contents/Resources/DWARF/SinaNews")
-		
-//		let str = "7   SinaNews                      0x0000000101346d98 0x10006c000 + 19770776"
-//		let commandOutput = ParserCrash.parser(crashLineString: str, arch: .arm64, archivePath: "/Users/gaoliang5/Downloads/com/SinaNews.app.dSYM/Contents/Resources/DWARF/SinaNews")
-//		let commandOutput = ParserCrash.runCommand(command: "ls /Users/gaoliang5/Downloads/com/SinaNews.app.dSYM")
-//		print(commandOutput)
+		let crashInfo = CrashFileInfo(crashFilePath: path!)
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -40,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	//MARK: setup log
-	func setupLog() {
+	private func setupLog() {
 		let log = SwiftyBeaver.self
 		// add log destinations. at least one is needed!
 		let console = ConsoleDestination()  // log to Xcode Console
@@ -76,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //		log.info("my data", context: [1, "a", 2]) // "INFO: my data [1, \"a\", 2]"
 	}
 
-	func createNewWindow() {
+	private func createNewWindow() {
 		window.title = "My Tookit"
 		//		window.isOpaque = false
 		window.center()

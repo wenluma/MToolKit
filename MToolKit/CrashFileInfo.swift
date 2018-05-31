@@ -59,8 +59,8 @@ class CrashFileInfo {
 		self.init(crashFilePath: "", dsymPath: "")
 	}
 	
-	init(crashFilePath : String, dsymPath: String) {
-		if crashFilePath.count < 1{
+	init(crashFilePath : String, dsymPath: String = "") {
+		if crashFilePath.count < 1 {
 			return 
 		}
 		path = crashFilePath
@@ -81,9 +81,7 @@ class CrashFileInfo {
 			return String(String(line).suffix(from: key.endIndex))
 		}
 		
-		
 		let content = try? String(contentsOfFile: path!)
-//		CharacterSet.newlines
 		let lines = content?.split(separator: "\n")
 				
 		for line in lines! {
@@ -119,7 +117,7 @@ class CrashFileInfo {
 				for crashLine in primitiveCrashCodes! {
 					let crashItem = String(crashLine)
 					if crashItem.mtk_startWithDigtail() {
-						let result = ParserCrashLineItem.parser(crashLineString: crashItem, arch: dsymItem!.arch, dsymPath: dsymPath)
+						let result = ParserCrashLineItem.parser(crashLineString: crashItem, dsymItem: dsymItem!, dsymPath: dsymPath)
 						handlerCrashCodes.append(result)
 					} else {
 						handlerCrashCodes.append(crashItem)
@@ -192,13 +190,16 @@ class CrashLineItem  {
 
 class ParserCrashLineItem {
 //	6   SinaNews  0x0000000101308478 0x10006c000 + 19514488
-	class func parser(crashLineString : String, arch : Arch, dsymPath : String) -> String {
+	class func parser(crashLineString : String, dsymItem : CrashDsymItem, dsymPath : String) -> String {
 		let result = crashLineString.mtk_matchRegular("([^\\s])+") //空白字符
 		let item = CrashLineItem(result)
 		guard item != nil else {
 			return crashLineString;
 		}
-		item!.arch = arch
+		guard item!.programID == dsymItem.dsymID else {
+			return crashLineString
+		}
+		item!.arch = dsymItem.arch
 		item!.dsymPath = dsymPath
 		return CommandLine.runCommand(item!.buildAtoSCommand())
 	}
@@ -206,7 +207,7 @@ class ParserCrashLineItem {
 
 //MARK: - get crash dsym
 class CrashDsymItem {
-	private var dsymID = ""
+	var dsymID = ""
 	var arch : Arch 
 	private var uuid : String {
 		set {
