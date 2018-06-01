@@ -137,7 +137,7 @@ class CrashFileInfo {
 					SwiftyBeaver.debug(result)
 				}
 			}
-			return handlerCrashCodes.joined(separator: "\n")
+			return handlerCrashCodes.joined(separator: "")
 		}
 		return ""
 	}
