@@ -11,5 +11,5 @@ import Foundation
 class LayoutConst {
 	static let edgePadding : Int = 20
 	static let spacePadding : Int = 10
-
+	static var windowTitleBarHeight : Int = 0
 }

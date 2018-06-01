@@ -14,7 +14,7 @@ import SnapKit
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 //	@IBOutlet weak var window: NSWindow!
-	var window : NSWindow! = NSWindow(contentRect: NSMakeRect(0, 0, NSScreen.main!.frame.midX, NSScreen.main!.frame.midY), styleMask: [.borderless], backing: .buffered, defer: false)
+	var window : NSWindow! = NSWindow(contentRect: NSZeroRect, styleMask: [.borderless], backing: .buffered, defer: false)
 	var windowController :  NSWindowController?
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -22,12 +22,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		createNewWindow()
 		windowController = NSWindowController(window: window)
 		windowController?.showWindow(window)
-		
-		let path = mainBundlePath(forResource: "20180529", ofType: "crash")
-		guard path != nil else {
-			return
-		}
-		let crashInfo = CrashFileInfo(crashFilePath: path!)
 	}
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -76,19 +70,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		//		window.isOpaque = false
 		window.center()
 		window.isMovableByWindowBackground = true
-//		window.contentViewController = CrashParserViewController()
-//		window.contentViewController?.view = NSView()
-		
-		let	viewController = CrashParserViewController()
-		viewController.loadView()
-//		viewController.view = NSView() // added this line; edit to set any view of your choice
-		window.contentView!.addSubview(viewController.view)
+		LayoutConst.windowTitleBarHeight = Int(window.titleBarHeight)
 
+		let	viewController = CrashParserViewController()
+		window.contentViewController = viewController
+		window.setFrame(NSMakeRect(NSScreen.main!.frame.midX/2, NSScreen.main!.frame.midY/2, NSScreen.main!.frame.midX, NSScreen.main!.frame.midY), display: true)
+//		window.setContentSize(NSMakeSize(NSScreen.main!.frame.midX, NSScreen.main!.frame.midY))
 		viewController.view.snp.makeConstraints { (make) in
 			make.edges.equalTo(NSEdgeInsetsZero)
 		}
 //		window.backgroundColor = NSColor.red
 		//		window.makeKeyAndOrderFront(nil) // 展示
+	}
+}
+
+extension NSWindow {
+	var titleBarHeight: CGFloat {
+		let contentHeight = contentRect(forFrameRect: frame).height
+		return frame.height - contentHeight
 	}
 }
 
