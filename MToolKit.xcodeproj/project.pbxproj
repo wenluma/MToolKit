@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		520E405420B3B57200B34908 /* String+MTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520E405320B3B57200B34908 /* String+MTK.swift */; };
-		520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA7DE20A3178E0030F1D0 /* CrashParser.swift */; };
+		520EA7DF20A3178E0030F1D0 /* CrashParserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA7DE20A3178E0030F1D0 /* CrashParserViewController.swift */; };
 		5265BFE820BE4A72001EB388 /* 20180529.crash in Resources */ = {isa = PBXBuildFile; fileRef = 5265BFE720BE4A71001EB388 /* 20180529.crash */; };
 		5265BFEA20BEC23A001EB388 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265BFE920BEC23A001EB388 /* CommandLine.swift */; };
 		526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD574209B11BA00296E65 /* AppDelegate.swift */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		520E405320B3B57200B34908 /* String+MTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MTK.swift"; sourceTree = "<group>"; };
-		520EA7DE20A3178E0030F1D0 /* CrashParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashParser.swift; sourceTree = "<group>"; };
+		520EA7DE20A3178E0030F1D0 /* CrashParserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashParserViewController.swift; sourceTree = "<group>"; };
 		5265BFE720BE4A71001EB388 /* 20180529.crash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20180529.crash; sourceTree = "<group>"; };
 		5265BFE920BEC23A001EB388 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		526AD571209B11BA00296E65 /* MToolKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MToolKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				526AD574209B11BA00296E65 /* AppDelegate.swift */,
-				520EA7DE20A3178E0030F1D0 /* CrashParser.swift */,
+				520EA7DE20A3178E0030F1D0 /* CrashParserViewController.swift */,
 				529453C420AA76E4007DF27F /* LayoutConst.swift */,
 				52C271EE20ABC58B00937393 /* CrashFileInfo.swift */,
 				520E405320B3B57200B34908 /* String+MTK.swift */,
@@ -357,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520EA7DF20A3178E0030F1D0 /* CrashParser.swift in Sources */,
+				520EA7DF20A3178E0030F1D0 /* CrashParserViewController.swift in Sources */,
 				520E405420B3B57200B34908 /* String+MTK.swift in Sources */,
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 				5265BFEA20BEC23A001EB388 /* CommandLine.swift in Sources */,

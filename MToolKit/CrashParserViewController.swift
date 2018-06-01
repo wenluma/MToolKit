@@ -14,10 +14,12 @@ class CrashParserViewController: NSViewController {
 //	MARK: - property
 	var crashLab, dsymLab : NSTextField?
 	var crashPathField, dsymPathField : NSTextField?
+	var parserButton, crashSourceButton : NSButton?
 	var parserCrashTextView : NSTextView?
+	
 //	MARK: - override
 	override func loadView() {
-		view = NSView()
+		self.view = NSView()
 		self.view.wantsLayer = false //true ,可以改变 layer 背景色
 		self.view.layer?.backgroundColor = CGColor.black
 		
@@ -25,13 +27,19 @@ class CrashParserViewController: NSViewController {
 		dsymLab = textField("dsym path:", "", alignment: .right)
 		crashPathField = textField("", "请输入crash log path", enableEdit: true)
 		dsymPathField = textField("", "请输入dsym path", enableEdit: true)
+		parserButton = NSButton(title: "parser crash file", target: self, action: #selector(self.parserAction(_:)))
+		crashSourceButton = NSButton(title: "show crash file", target: self, action: #selector(self.showCrashAction(_:)))
 		parserCrashTextView = textView("等待解析数据")
 		
 		self.view.addSubview(crashLab!)
 		self.view.addSubview(dsymLab!)
 		self.view.addSubview(crashPathField!)
 		self.view.addSubview(dsymPathField!)
-		view.addSubview(parserCrashTextView!)
+		self.view.addSubview(parserButton!)
+		self.view.addSubview(crashSourceButton!)
+		self.view.addSubview(parserCrashTextView!)
+// 不能调用 super 否则会空页面		
+//		super.loadView()
 	}
 		
 	override public func viewDidLoad() {
@@ -55,7 +63,8 @@ class CrashParserViewController: NSViewController {
 		SwiftyBeaver.debug("#updateViewConstraints")
 		
 		crashLab!.snp.makeConstraints { (make) -> Void in
-			make.left.top.equalTo(LayoutConst.edgePadding);
+			make.left.equalTo(LayoutConst.edgePadding)
+			make.top.equalTo(LayoutConst.windowTitleBarHeight + LayoutConst.edgePadding)
 			make.width.lessThanOrEqualTo(100)
 		}
 		crashPathField?.snp.makeConstraints({ (make) in
@@ -75,8 +84,18 @@ class CrashParserViewController: NSViewController {
 			make.right.equalTo(crashPathField!)
 		})
 		
-		parserCrashTextView?.snp.makeConstraints({ (make) in
+		parserButton?.snp.makeConstraints({ (make) in
+			make.left.equalTo(crashLab!.snp.left)
 			make.top.equalTo(dsymLab!.snp.bottom).offset(LayoutConst.spacePadding)
+		})
+		
+		crashSourceButton?.snp.makeConstraints({ (make) in
+			make.top.equalTo(parserButton!.snp.top)
+			make.left.equalTo(parserButton!.snp.right).offset(LayoutConst.spacePadding)
+		})
+		
+		parserCrashTextView?.snp.makeConstraints({ (make) in
+			make.top.equalTo(parserButton!.snp.bottom).offset(LayoutConst.spacePadding)
 			make.right.bottom.equalTo(-LayoutConst.edgePadding)
 			make.left.equalTo(LayoutConst.edgePadding)
 		})
@@ -99,4 +118,21 @@ class CrashParserViewController: NSViewController {
 		textView.string = text
 		return textView
 	} 
+//	MARK: - action
+	@objc 
+	func parserAction(_ sender: NSButton) {
+		SwiftyBeaver.debug("")
+		
+		let parser = CrashFileInfo(crashFilePath: crashPathField!.stringValue)
+		let result = parser.crashCode2SymbolicCode()
+		parserCrashTextView?.string = result
+		
+	}
+	
+	@objc 
+	func showCrashAction(_ sender: NSButton) {
+		SwiftyBeaver.debug("")
+		let source = try? String(contentsOfFile: crashPathField!.stringValue) 
+		parserCrashTextView?.string = source ?? "无效文件路径\(crashPathField!.stringValue)"
+	}
 }
