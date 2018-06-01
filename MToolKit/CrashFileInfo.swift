@@ -103,7 +103,6 @@ class CrashFileInfo {
 		if binaryImagesContent!.count > 0 {
 			dsymItem = CrashDsymItem(binaryImagesContent![0])
 			self.dsymPath = dsymItem!.dsymUUIDPath()
-			let _  = crashCode2SymbolicCode() //消除警告
 		}
 	}
 // 符号化解析
