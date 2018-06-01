@@ -106,7 +106,7 @@ class CrashFileInfo {
 		}
 	}
 // 符号化解析
-	func crashCode2SymbolicCode() -> String {
+	func crashCode2SymbolicCode(_ onlySymbolic : Bool = true) -> String {
 		if self.crashContent != nil {
 			handlerCrashCodes.removeAll()
 			
@@ -115,6 +115,16 @@ class CrashFileInfo {
 				
 				for crashLine in primitiveCrashCodes! {
 					let crashItem = String(crashLine)
+
+					if onlySymbolic {
+						if crashItem.mtk_startWithDigtail() {
+							let result = ParserCrashLineItem.parser(crashLineString: crashItem, dsymItem: dsymItem!, dsymPath: dsymPath)
+							if result != crashItem {
+								handlerCrashCodes.append(result)
+							}
+						}
+						continue
+					}
 					if crashItem.mtk_startWithDigtail() {
 						let result = ParserCrashLineItem.parser(crashLineString: crashItem, dsymItem: dsymItem!, dsymPath: dsymPath)
 						handlerCrashCodes.append(result)
