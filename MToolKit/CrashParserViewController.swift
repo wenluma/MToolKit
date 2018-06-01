@@ -122,11 +122,14 @@ class CrashParserViewController: NSViewController {
 	@objc 
 	func parserAction(_ sender: NSButton) {
 		SwiftyBeaver.debug("")
-		
 		let parser = CrashFileInfo(crashFilePath: crashPathField!.stringValue)
-		let result = parser.crashCode2SymbolicCode()
-		parserCrashTextView?.string = result
 		
+		DispatchQueue.global().async { 
+			let result = parser.crashCode2SymbolicCode()
+			DispatchQueue.main.async(execute: { 
+				self.parserCrashTextView?.string = result
+			})
+		}
 	}
 	
 	@objc 
