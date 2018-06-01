@@ -11,5 +11,6 @@ import Foundation
 class LayoutConst {
 	static let edgePadding : Int = 20
 	static let spacePadding : Int = 10
+//	MARK: - window title bar height
 	static var windowTitleBarHeight : Int = 0
 }
