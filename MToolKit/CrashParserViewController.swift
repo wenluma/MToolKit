@@ -26,7 +26,7 @@ class CrashParserViewController: NSViewController {
 		crashLab = textField("crash log path:","", alignment: .right)
 		dsymLab = textField("dsym path:", "", alignment: .right)
 		crashPathField = textField("", "请输入crash log path", enableEdit: true)
-		dsymPathField = textField("", "请输入dsym path", enableEdit: true)
+		dsymPathField = textField("", "不输入时，会遍历查找本地的dsym文件", enableEdit: true)
 		parserButton = NSButton(title: "parser crash file", target: self, action: #selector(self.parserAction(_:)))
 		crashSourceButton = NSButton(title: "show crash file", target: self, action: #selector(self.showCrashAction(_:)))
 		parserCrashTextView = textView("等待解析数据")
@@ -123,7 +123,7 @@ class CrashParserViewController: NSViewController {
 	func parserAction(_ sender: NSButton) {
 		SwiftyBeaver.debug("")
 		let parser = CrashFileInfo(crashFilePath: crashPathField!.stringValue)
-		
+
 		DispatchQueue.global().async { 
 			let result = parser.crashCode2SymbolicCode()
 			DispatchQueue.main.async(execute: { 
