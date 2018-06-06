@@ -105,6 +105,24 @@ class CrashFileInfo {
 			self.dsymPath = dsymItem!.dsymUUIDPath()
 		}
 	}
+	
+	func hasLocalDsymFile() -> Bool {
+		return self.dsymPath.count > 0
+	}
+	
+	func asyncSymbolic(onMainQueue closure: @escaping (String) -> ()) {
+		guard hasLocalDsymFile() else {
+			
+			return 
+		} 
+		DispatchQueue.global().async { [weak self] in
+			let result = self?.crashCode2SymbolicCode()
+			DispatchQueue.main.async(execute: { 
+				closure(result!)
+			})
+		}
+	}
+	
 // 符号化解析
 	func crashCode2SymbolicCode(_ onlySymbolic : Bool = true) -> String {
 		if self.crashContent != nil {
@@ -270,3 +288,5 @@ class CrashDsymItem {
 		return path.appending(lastPath)
 	}
 }
+
+
