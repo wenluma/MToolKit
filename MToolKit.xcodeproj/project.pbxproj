@@ -18,6 +18,9 @@
 		526AD591209B11BD00296E65 /* MToolKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526AD590209B11BD00296E65 /* MToolKitUITests.swift */; };
 		529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529453C420AA76E4007DF27F /* LayoutConst.swift */; };
 		52C271EF20ABC58B00937393 /* CrashFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C271EE20ABC58B00937393 /* CrashFileInfo.swift */; };
+		52FA60B820C55C0C00B50440 /* DownloadDsymFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA60B720C55C0C00B50440 /* DownloadDsymFileService.swift */; };
+		52FA60BA20C62CBC00B50440 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA60B920C62CBC00B50440 /* Const.swift */; };
+		52FA60BC20C7787600B50440 /* Path+MTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA60BB20C7787600B50440 /* Path+MTK.swift */; };
 		F1CEDB6A8BE50ADE8AD01B14 /* Pods_MToolKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		526AD592209B11BD00296E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529453C420AA76E4007DF27F /* LayoutConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConst.swift; sourceTree = "<group>"; };
 		52C271EE20ABC58B00937393 /* CrashFileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashFileInfo.swift; sourceTree = "<group>"; };
+		52FA60B720C55C0C00B50440 /* DownloadDsymFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDsymFileService.swift; sourceTree = "<group>"; };
+		52FA60B920C62CBC00B50440 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		52FA60BB20C7787600B50440 /* Path+MTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+MTK.swift"; sourceTree = "<group>"; };
 		72F965FCA23AC19753BE4229 /* Pods-MToolKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.release.xcconfig"; sourceTree = "<group>"; };
 		B011BB185064744CB5BB051D /* Pods-MToolKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MToolKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MToolKit/Pods-MToolKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FFFAF6D12D9040B554A66EA3 /* Pods_MToolKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MToolKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,8 +122,11 @@
 				526AD574209B11BA00296E65 /* AppDelegate.swift */,
 				520EA7DE20A3178E0030F1D0 /* CrashParserViewController.swift */,
 				529453C420AA76E4007DF27F /* LayoutConst.swift */,
+				52FA60B920C62CBC00B50440 /* Const.swift */,
 				52C271EE20ABC58B00937393 /* CrashFileInfo.swift */,
+				52FA60B720C55C0C00B50440 /* DownloadDsymFileService.swift */,
 				520E405320B3B57200B34908 /* String+MTK.swift */,
+				52FA60BB20C7787600B50440 /* Path+MTK.swift */,
 				5265BFE920BEC23A001EB388 /* CommandLine.swift */,
 				5265BFE720BE4A71001EB388 /* 20180529.crash */,
 				526AD576209B11BD00296E65 /* Assets.xcassets */,
@@ -362,6 +371,9 @@
 				526AD575209B11BA00296E65 /* AppDelegate.swift in Sources */,
 				5265BFEA20BEC23A001EB388 /* CommandLine.swift in Sources */,
 				529453C520AA76E4007DF27F /* LayoutConst.swift in Sources */,
+				52FA60B820C55C0C00B50440 /* DownloadDsymFileService.swift in Sources */,
+				52FA60BC20C7787600B50440 /* Path+MTK.swift in Sources */,
+				52FA60BA20C62CBC00B50440 /* Const.swift in Sources */,
 				52C271EF20ABC58B00937393 /* CrashFileInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
