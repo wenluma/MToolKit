@@ -6,4 +6,5 @@ target 'MToolKit' do
 	pod 'SwiftyBeaver' # log
 	pod 'SnapKit', '~> 4.0.0'# 布局
 	pod 'FileKit', '~> 5.0.0'
+	pod 'CryptoSwift', '~> 0.10.0'
 end
